@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb99e3c6-cc35-43d5-9e5e-8685c01e3443" name="Changes" comment="Implementing Action Listner">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="fb99e3c6-cc35-43d5-9e5e-8685c01e3443" name="Changes" comment="action listner implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Function_File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Function_File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +23,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Hey-Viswa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="dd5e31b2-8aa4-4fca-8370-1a6e6597914c" />
+        <option name="url" value="https://github.com/Hey-Viswa/Notepad-Swing" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -41,12 +54,22 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "app.teamhub.Diff-filters": "{\"pushedChanges\":false,\"unpushedChanges\":true,\"todo\":false,\"inProgress\":true,\"readyForReview\":true,\"stale\":true,\"forks\":true,\"offline\":false,\"nonConflicting\":false}",
+    "app.teamhub.Repo-options": "{\"right\":\"TheirRemote\",\"forks\":true,\"offline\":true}",
+    "app.teamhub.Tree-filters": "{\"pushedChanges\":false,\"unpushedChanges\":true,\"todo\":false,\"inProgress\":true,\"readyForReview\":true,\"stale\":true,\"forks\":true,\"offline\":false,\"nonConflicting\":true}",
+    "app.teamhub.hoistedBranchRegex": "Hey-viswa/Notepad-Swing",
+    "app.teamhub.selectedTeam": "github.com/Hey-Viswa",
     "app.teamhub.trackedBranches": "-15jigiq/master",
     "git-widget-placeholder": "master",
     "onboarding.tips.debug.path": "C:/Users/Viswaranjan/IdeaProjects/Swing Note/src/Main.java",
     "settings.editor.selected.configurable": "gitlive.settings"
   }
 }]]></component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\Viswaranjan\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="97607424-2d2b-470f-a7bf-cfcbb031d49e" reportId="Swing Note/qodana/2023-10-29" />
+    </option>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,7 +87,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698493259651</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implementing Action Listner">
+      <option name="closed" value="true" />
+      <created>1698594376248</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698594376248</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
