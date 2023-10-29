@@ -1,10 +1,9 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import static java.awt.SystemColor.menu;
 
-public class GUI  {
+public class GUI implements ActionListener {
 
     JFrame window;
     JTextArea textArea;
@@ -12,11 +11,10 @@ public class GUI  {
     JMenuBar menuBar;
     JMenu menuFile, menuEdit, menuFormat, menuColor;
     JMenuItem iNew, iOpen, iSave, iSaveAs, iExit;
-    public static void main(String[] args) {
-        new GUI();
-    }
 
-    public GUI(){
+    Function_File file = new Function_File(this);
+
+    public GUI() {
         createWindow();
         createTextArea();
         createMenuBar();
@@ -24,13 +22,17 @@ public class GUI  {
         window.setVisible(true);
     }
 
-    public void createWindow(){
+    public static void main(String[] args) {
+        new GUI();
+    }
+
+    public void createWindow() {
         window = new JFrame("NotePad");
-        window.setSize(800,600);
+        window.setSize(800, 600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public void createTextArea(){
+    public void createTextArea() {
         textArea = new JTextArea();
         scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
@@ -41,7 +43,7 @@ public class GUI  {
         window.add(scrollPane);
     }
 
-    public void createMenuBar(){
+    public void createMenuBar() {
         menuBar = new JMenuBar();
         window.setJMenuBar(menuBar);
 
@@ -57,17 +59,40 @@ public class GUI  {
         // Set preferred size for the menu bar
         menuBar.setPreferredSize(new Dimension(800, 30));
     }
-    public void createFileMenu(){
+
+    public void createFileMenu() {
         iNew = new JMenuItem("New");
+        iNew.addActionListener(this);
+        iNew.setActionCommand("New");
         menuFile.add(iNew);
+
         iOpen = new JMenuItem("Open");
+        iOpen.addActionListener(this);
+        iOpen.setActionCommand("Open");
         menuFile.add(iOpen);
+
         iSave = new JMenuItem("Save");
         menuFile.add(iSave);
+
         iSaveAs = new JMenuItem("Save As");
         menuFile.add(iSaveAs);
+
         iExit = new JMenuItem("Exit");
         menuFile.add(iExit);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String command = e.getActionCommand();
+
+        switch (command) {
+            case "New":
+                file.newFile();
+                break;
+            case "Open":
+                file.open();
+                break;
+
+        }
+    }
 }
