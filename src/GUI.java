@@ -6,19 +6,27 @@ import java.awt.event.ActionListener;
 public class GUI implements ActionListener {
 
     JFrame window;
+    // TEXT AREA
     JTextArea textArea;
     JScrollPane scrollPane;
+    // TOP MENUBAR
     JMenuBar menuBar;
     JMenu menuFile, menuEdit, menuFormat, menuColor;
+    // FILE MENU
     JMenuItem iNew, iOpen, iSave, iSaveAs, iExit;
+    // FORMAT MENU
+    JMenuItem iWrap, iFontArial, iFontCSMS, iFontTNR, iFontSize8, iFontSize12, iFontSize16, iFontSize20, iFontSize24, iFontSize28;
+    JMenu menuFont, menuFontSize;
 
     Function_File file = new Function_File(this);
+    Function_Format format = new Function_Format(this);
 
     public GUI() {
         createWindow();
         createTextArea();
         createMenuBar();
         createFileMenu();
+        createFormatMenu();
         window.setVisible(true);
     }
 
@@ -82,21 +90,81 @@ public class GUI implements ActionListener {
         menuFile.add(iSaveAs);
 
         iExit = new JMenuItem("Exit");
+        iExit.addActionListener(this);
+        iExit.setActionCommand("Exit");
         menuFile.add(iExit);
     }
+    public void createFormatMenu(){
+
+        iWrap = new JMenuItem("Word Wrap: Off");
+        iWrap.addActionListener(this);
+        iWrap.setActionCommand("Word Wrap");
+        menuFormat.add(iWrap);
+
+        menuFont = new JMenu("Font");
+        menuFormat.add(menuFont);
+
+        iFontArial = new JMenuItem("Arial");
+        iFontArial.addActionListener(this);
+        iFontArial.setActionCommand("Arial");
+        menuFont.add(iFontArial);
+
+        iFontCSMS = new JMenuItem("Comic Sans MS");
+        iFontCSMS.addActionListener(this);
+        iFontCSMS.setActionCommand("Comic Sans MS");
+        menuFont.add(iFontCSMS );
+
+        iFontTNR = new JMenuItem("Times New Roman");
+        iFontTNR.addActionListener(this);
+        iFontTNR.setActionCommand("Times New Roman");
+        menuFont.add(iFontTNR);
+
+        menuFontSize = new JMenu("Font Size");
+        menuFormat.add(menuFontSize);
+
+        iFontSize8 = new JMenuItem ("8");
+        iFontSize8.addActionListener(this);
+        iFontSize8.setActionCommand("8");
+        menuFontSize.add(iFontSize8);
+
+         iFontSize8 = new JMenuItem ("12");
+        iFontSize8.addActionListener(this);
+        iFontSize8.setActionCommand("8menu");
+        menuFontSize.add(iFontSize8);
+
+         iFontSize8 = new JMenuItem ("8");
+        iFontSize8.addActionListener(this);
+        iFontSize8.setActionCommand("8menu");
+        menuFontSize.add(iFontSize8);
+
+         iFontSize8 = new JMenuItem ("8");
+        iFontSize8.addActionListener(this);
+        iFontSize8.setActionCommand("8menu");
+        menuFontSize.add(iFontSize8);
+
+         iFontSize8 = new JMenuItem ("8");
+        iFontSize8.addActionListener(this);
+        iFontSize8.setActionCommand("8menu");
+        menuFontSize.add(iFontSize8);
+
+         iFontSize8 = new JMenuItem ("8");
+        iFontSize8.addActionListener(this);
+        iFontSize8.setActionCommand("8menu");
+        menuFontSize.add(iFontSize8);
+
+}
 
     @Override
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
 
         switch (command) {
-            case "New":
-                file.newFile();
-                break;
-            case "Open":
-                file.open();
-                break;
-
+            case "New" -> file.newFile();
+            case "Open" -> file.open();
+            case "Save" -> file.save();
+            case "Save As" -> file.saveAs();
+            case "Exit" ->  file.exit();
         }
     }
+
 }
