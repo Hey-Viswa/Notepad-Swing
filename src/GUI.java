@@ -9,6 +9,7 @@ public class GUI implements ActionListener {
     // TEXT AREA
     JTextArea textArea;
     JScrollPane scrollPane;
+    boolean wordWrapOn = false;
     // TOP MENUBAR
     JMenuBar menuBar;
     JMenu menuFile, menuEdit, menuFormat, menuColor;
@@ -127,30 +128,30 @@ public class GUI implements ActionListener {
         iFontSize8.setActionCommand("8");
         menuFontSize.add(iFontSize8);
 
-         iFontSize8 = new JMenuItem ("12");
-        iFontSize8.addActionListener(this);
-        iFontSize8.setActionCommand("8menu");
-        menuFontSize.add(iFontSize8);
+        iFontSize12 = new JMenuItem ("12");
+        iFontSize12.addActionListener(this);
+        iFontSize12.setActionCommand("12");
+        menuFontSize.add(iFontSize12);
 
-         iFontSize8 = new JMenuItem ("8");
-        iFontSize8.addActionListener(this);
-        iFontSize8.setActionCommand("8menu");
-        menuFontSize.add(iFontSize8);
+        iFontSize16 = new JMenuItem ("16");
+        iFontSize16.addActionListener(this);
+        iFontSize16.setActionCommand("16");
+        menuFontSize.add(iFontSize16);
 
-         iFontSize8 = new JMenuItem ("8");
-        iFontSize8.addActionListener(this);
-        iFontSize8.setActionCommand("8menu");
-        menuFontSize.add(iFontSize8);
+        iFontSize20 = new JMenuItem ("20");
+        iFontSize20.addActionListener(this);
+        iFontSize20.setActionCommand("20");
+        menuFontSize.add(iFontSize20);
 
-         iFontSize8 = new JMenuItem ("8");
-        iFontSize8.addActionListener(this);
-        iFontSize8.setActionCommand("8menu");
-        menuFontSize.add(iFontSize8);
+        iFontSize24 = new JMenuItem ("24");
+        iFontSize24.addActionListener(this);
+        iFontSize24.setActionCommand("24");
+        menuFontSize.add(iFontSize24);
 
-         iFontSize8 = new JMenuItem ("8");
-        iFontSize8.addActionListener(this);
-        iFontSize8.setActionCommand("8menu");
-        menuFontSize.add(iFontSize8);
+        iFontSize28 = new JMenuItem ("28");
+        iFontSize28.addActionListener(this);
+        iFontSize28.setActionCommand("28");
+        menuFontSize.add(iFontSize28);
 
 }
 

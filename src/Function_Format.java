@@ -6,4 +6,12 @@ public class Function_Format {
     public Function_Format(GUI gui){
         this.gui = gui;
     }
+    public void wordWrap(){
+
+        if(gui.wordWrapOn == false){
+            gui.wordWrapOn = true;
+            gui.textArea.setLineWrap(true);
+            gui.textArea.setWrapStyleWord(true);
+        }
+    }
 }
