@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fb99e3c6-cc35-43d5-9e5e-8685c01e3443" name="Changes" comment="action listner implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Function_File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Function_File.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,27 +50,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "app.teamhub.Diff-filters": "{\"pushedChanges\":false,\"unpushedChanges\":true,\"todo\":false,\"inProgress\":true,\"readyForReview\":true,\"stale\":true,\"forks\":true,\"offline\":false,\"nonConflicting\":false}",
-    "app.teamhub.Repo-options": "{\"right\":\"TheirRemote\",\"forks\":true,\"offline\":true}",
-    "app.teamhub.Tree-filters": "{\"pushedChanges\":false,\"unpushedChanges\":true,\"todo\":false,\"inProgress\":true,\"readyForReview\":true,\"stale\":true,\"forks\":true,\"offline\":false,\"nonConflicting\":true}",
-    "app.teamhub.hoistedBranchRegex": "Hey-viswa/Notepad-Swing",
-    "app.teamhub.selectedTeam": "github.com/Hey-Viswa",
-    "app.teamhub.trackedBranches": "-15jigiq/master",
-    "git-widget-placeholder": "master",
-    "onboarding.tips.debug.path": "C:/Users/Viswaranjan/IdeaProjects/Swing Note/src/Main.java",
-    "settings.editor.selected.configurable": "gitlive.settings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;app.teamhub.Diff-filters&quot;: &quot;{\&quot;pushedChanges\&quot;:false,\&quot;unpushedChanges\&quot;:true,\&quot;todo\&quot;:false,\&quot;inProgress\&quot;:true,\&quot;readyForReview\&quot;:true,\&quot;stale\&quot;:true,\&quot;forks\&quot;:true,\&quot;offline\&quot;:false,\&quot;nonConflicting\&quot;:false}&quot;,
+    &quot;app.teamhub.Repo-options&quot;: &quot;{\&quot;right\&quot;:\&quot;TheirRemote\&quot;,\&quot;forks\&quot;:true,\&quot;offline\&quot;:true}&quot;,
+    &quot;app.teamhub.Tree-filters&quot;: &quot;{\&quot;pushedChanges\&quot;:false,\&quot;unpushedChanges\&quot;:true,\&quot;todo\&quot;:false,\&quot;inProgress\&quot;:true,\&quot;readyForReview\&quot;:true,\&quot;stale\&quot;:true,\&quot;forks\&quot;:true,\&quot;offline\&quot;:false,\&quot;nonConflicting\&quot;:true}&quot;,
+    &quot;app.teamhub.hoistedBranchRegex&quot;: &quot;Hey-viswa/Notepad-Swing&quot;,
+    &quot;app.teamhub.selectedTeam&quot;: &quot;github.com/Hey-Viswa&quot;,
+    &quot;app.teamhub.trackedBranches&quot;: &quot;-15jigiq/master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Viswaranjan/IdeaProjects/Swing Note/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;gitlive.settings&quot;
   }
-}]]></component>
-  <component name="QodanaReportsService">
-    <option name="descriptions">
-      <ReportDescription localRun="true" path="C:\Users\Viswaranjan\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="97607424-2d2b-470f-a7bf-cfcbb031d49e" reportId="Swing Note/qodana/2023-10-29" />
-    </option>
-  </component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
