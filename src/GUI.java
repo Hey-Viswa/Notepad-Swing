@@ -18,21 +18,35 @@ public class GUI implements ActionListener {
     // FORMAT MENU
     JMenuItem iWrap, iFontArial, iFontCSMS, iFontTNR, iFontSize8, iFontSize12, iFontSize16, iFontSize20, iFontSize24, iFontSize28;
     JMenu menuFont, menuFontSize;
+    // COLOR MENU
+    JMenuItem iColor1, iColor2, iColor3;
+
+    //EDIT MENU
+    JMenuItem iUndo, iRedo;
 
     Function_File file = new Function_File(this);
     Function_Format format = new Function_Format(this);
+    Function_Color color = new Function_Color(this);
 
-    public GUI() {
+    UndoManager um = new UndoManager();
+
+   
+
+    public static void main(String[] args) {
+        new GUI();
+    }
+     public GUI() {
         createWindow();
         createTextArea();
         createMenuBar();
         createFileMenu();
         createFormatMenu();
+        createEditMenu();
+        format.selectedFont = "Arial";
+        format.createFont(16);
+        format.wordWrap();
+        color.changeColor("White");
         window.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new GUI();
     }
 
     public void createWindow() {
@@ -95,6 +109,18 @@ public class GUI implements ActionListener {
         iExit.setActionCommand("Exit");
         menuFile.add(iExit);
     }
+
+    public void createEditMenu(){
+        iUndo = new JMenuItem("Undo");
+        iUndo.addActionListener(this);
+        iUndo.setActionCommand("Undo");
+        menuEdit.add(iUndo);
+
+        iRedo = new JMenuItem("Redo");
+        iRedo.addActionListener(this);
+        iRedo.setActionCommand("Redo");
+        menuEdit.add(iRedo);
+    }
     public void createFormatMenu(){
 
         iWrap = new JMenuItem("Word Wrap: Off");
@@ -154,6 +180,24 @@ public class GUI implements ActionListener {
         menuFontSize.add(iFontSize28);
 
 }
+public void createColorMenu(){
+
+    iColor1 = new JMenuItem("White");
+    iColor1.addActionListener(this);
+    iColor1.setActionCommand("White");
+    menuColor.add(iColor1);
+
+    iColor2 = new JMenuItem("Black");
+    iColor2.addActionListener(this);
+    iColor2.setActionCommand("Black");
+    menuColor.add(iColor2);
+
+    iColor3 = new JMenuItem("Blue");
+    iColor3.addActionListener(this);
+    iColor3.setActionCommand("Blue");
+    menuColor.add(iColor3);
+}
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -165,6 +209,19 @@ public class GUI implements ActionListener {
             case "Save" -> file.save();
             case "Save As" -> file.saveAs();
             case "Exit" ->  file.exit();
+            case "Word Wrap" -> format.wordWrap();
+            case "Arial" -> format.setFont(command);
+            case "Comic Sans MS" -> format.setFont(command);
+            case "Times New Roman" -> format.setFont(command);
+            case "size8" -> format.createFont(8);
+            case "size12" -> format.createFont(12);
+            case "size16" -> format.createFont(16);
+            case "size20" -> format.createFont(20);
+            case "size24" -> format.createFont(24);
+            case "size28" -> format.createFont(28);
+            case "White" -> color.changeColor(command);
+            case "Black" -> color.changeColor(command);
+            case "Blue" -> color.changeColor(command);
         }
     }
 
