@@ -1,7 +1,10 @@
 import javax.swing.*;
+import javax.swing.event.UndoableEditEvent;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.event.UndoableEditListener;
+import javax.swing.undo.UndoManager;
 
 public class GUI implements ActionListener {
 
@@ -27,6 +30,7 @@ public class GUI implements ActionListener {
     Function_File file = new Function_File(this);
     Function_Format format = new Function_Format(this);
     Function_Color color = new Function_Color(this);
+    Function_Edit edit = new  Function_Edit(this);
 
     UndoManager um = new UndoManager();
 
@@ -57,6 +61,13 @@ public class GUI implements ActionListener {
 
     public void createTextArea() {
         textArea = new JTextArea();
+
+        textArea.getDocument().addUndoableEditListener(
+            new UndoableEditListener(){
+                    public void undoableEditHappened(UndoableEditEvent e){
+                        um.addEdit(e.getEdit());
+                    }
+            });
         scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
 
@@ -209,6 +220,8 @@ public void createColorMenu(){
             case "Save" -> file.save();
             case "Save As" -> file.saveAs();
             case "Exit" ->  file.exit();
+            case "Undo" -> edit.undo();
+            case "Redo" -> edit.redo();
             case "Word Wrap" -> format.wordWrap();
             case "Arial" -> format.setFont(command);
             case "Comic Sans MS" -> format.setFont(command);
