@@ -234,11 +234,12 @@ public class GUI implements ActionListener {
             case "Comic Sans MS" -> format.setFont(command);
             case "Times New Roman" -> format.setFont(command);
             case "size8" -> format.createFont(8);
-            case "size12" -> format.createFont(12);
-            case "size16" -> format.createFont(16);
-            case "size20" -> format.createFont(20);
-            case "size24" -> format.createFont(24);
-            case "size28" -> format.createFont(28);
+            case "8" -> format.createFont(8);
+            case "12" -> format.createFont(12);
+            case "16" -> format.createFont(16);
+            case "20" -> format.createFont(20);
+            case "24" -> format.createFont(24);
+            case "28" -> format.createFont(28);
             case "White" -> color.changeColor(command);
             case "Black" -> color.changeColor(command);
             case "Blue" -> color.changeColor(command);
