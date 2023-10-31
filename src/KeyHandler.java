@@ -27,9 +27,14 @@ public class KeyHandler implements KeyListener {
         if(e.isControlDown() && e.isShiftDown() && e.getKeyCode()==KeyEvent.VK_S){
             gui.file.save();
         }
-        if(e.isControlDown() && e.isShiftDown() && e.getKeyCode()==KeyEvent.VK_X){
-            gui.edit.redo();
+        if (e.isControlDown() && e.isShiftDown() && e.getKeyCode() == KeyEvent.VK_X) {
+            if (gui.edit != null) {
+                gui.edit.redo();
+            } else {
+                System.out.println("gui.edit is null. Make sure it's properly initialized.");
+            }
         }
+
         if(e.isControlDown() && e.getKeyCode()==KeyEvent.VK_Z){
             gui.edit.undo();
         }
