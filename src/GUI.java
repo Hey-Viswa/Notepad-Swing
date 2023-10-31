@@ -1,10 +1,10 @@
 import javax.swing.*;
 import javax.swing.event.UndoableEditEvent;
+import javax.swing.event.UndoableEditListener;
+import javax.swing.undo.UndoManager;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.event.UndoableEditListener;
-import javax.swing.undo.UndoManager;
 
 public class GUI implements ActionListener {
 
@@ -30,27 +30,30 @@ public class GUI implements ActionListener {
     Function_File file = new Function_File(this);
     Function_Format format = new Function_Format(this);
     Function_Color color = new Function_Color(this);
-    Function_Edit edit = new  Function_Edit(this);
+    Function_Edit edit = new Function_Edit(this);
+
+    KeyHandler kHandler = new KeyHandler(this);
 
     UndoManager um = new UndoManager();
 
-   
 
-    public static void main(String[] args) {
-        new GUI();
-    }
-     public GUI() {
+    public GUI() {
         createWindow();
         createTextArea();
         createMenuBar();
         createFileMenu();
         createFormatMenu();
         createEditMenu();
+        createColorMenu();
         format.selectedFont = "Arial";
         format.createFont(16);
         format.wordWrap();
         color.changeColor("White");
         window.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new GUI();
     }
 
     public void createWindow() {
@@ -61,13 +64,15 @@ public class GUI implements ActionListener {
 
     public void createTextArea() {
         textArea = new JTextArea();
+        textArea.setFont(format.arial);
 
+        textArea.addKeyListener(kHandler);
         textArea.getDocument().addUndoableEditListener(
-            new UndoableEditListener(){
-                    public void undoableEditHappened(UndoableEditEvent e){
+                new UndoableEditListener() {
+                    public void undoableEditHappened(UndoableEditEvent e) {
                         um.addEdit(e.getEdit());
                     }
-            });
+                });
         scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
 
@@ -121,7 +126,7 @@ public class GUI implements ActionListener {
         menuFile.add(iExit);
     }
 
-    public void createEditMenu(){
+    public void createEditMenu() {
         iUndo = new JMenuItem("Undo");
         iUndo.addActionListener(this);
         iUndo.setActionCommand("Undo");
@@ -132,7 +137,8 @@ public class GUI implements ActionListener {
         iRedo.setActionCommand("Redo");
         menuEdit.add(iRedo);
     }
-    public void createFormatMenu(){
+
+    public void createFormatMenu() {
 
         iWrap = new JMenuItem("Word Wrap: Off");
         iWrap.addActionListener(this);
@@ -150,7 +156,7 @@ public class GUI implements ActionListener {
         iFontCSMS = new JMenuItem("Comic Sans MS");
         iFontCSMS.addActionListener(this);
         iFontCSMS.setActionCommand("Comic Sans MS");
-        menuFont.add(iFontCSMS );
+        menuFont.add(iFontCSMS);
 
         iFontTNR = new JMenuItem("Times New Roman");
         iFontTNR.addActionListener(this);
@@ -160,54 +166,55 @@ public class GUI implements ActionListener {
         menuFontSize = new JMenu("Font Size");
         menuFormat.add(menuFontSize);
 
-        iFontSize8 = new JMenuItem ("8");
+        iFontSize8 = new JMenuItem("8");
         iFontSize8.addActionListener(this);
         iFontSize8.setActionCommand("8");
         menuFontSize.add(iFontSize8);
 
-        iFontSize12 = new JMenuItem ("12");
+        iFontSize12 = new JMenuItem("12");
         iFontSize12.addActionListener(this);
         iFontSize12.setActionCommand("12");
         menuFontSize.add(iFontSize12);
 
-        iFontSize16 = new JMenuItem ("16");
+        iFontSize16 = new JMenuItem("16");
         iFontSize16.addActionListener(this);
         iFontSize16.setActionCommand("16");
         menuFontSize.add(iFontSize16);
 
-        iFontSize20 = new JMenuItem ("20");
+        iFontSize20 = new JMenuItem("20");
         iFontSize20.addActionListener(this);
         iFontSize20.setActionCommand("20");
         menuFontSize.add(iFontSize20);
 
-        iFontSize24 = new JMenuItem ("24");
+        iFontSize24 = new JMenuItem("24");
         iFontSize24.addActionListener(this);
         iFontSize24.setActionCommand("24");
         menuFontSize.add(iFontSize24);
 
-        iFontSize28 = new JMenuItem ("28");
+        iFontSize28 = new JMenuItem("28");
         iFontSize28.addActionListener(this);
         iFontSize28.setActionCommand("28");
         menuFontSize.add(iFontSize28);
 
-}
-public void createColorMenu(){
+    }
 
-    iColor1 = new JMenuItem("White");
-    iColor1.addActionListener(this);
-    iColor1.setActionCommand("White");
-    menuColor.add(iColor1);
+    public void createColorMenu() {
 
-    iColor2 = new JMenuItem("Black");
-    iColor2.addActionListener(this);
-    iColor2.setActionCommand("Black");
-    menuColor.add(iColor2);
+        iColor1 = new JMenuItem("White");
+        iColor1.addActionListener(this);
+        iColor1.setActionCommand("White");
+        menuColor.add(iColor1);
 
-    iColor3 = new JMenuItem("Blue");
-    iColor3.addActionListener(this);
-    iColor3.setActionCommand("Blue");
-    menuColor.add(iColor3);
-}
+        iColor2 = new JMenuItem("Black");
+        iColor2.addActionListener(this);
+        iColor2.setActionCommand("Black");
+        menuColor.add(iColor2);
+
+        iColor3 = new JMenuItem("Blue");
+        iColor3.addActionListener(this);
+        iColor3.setActionCommand("Blue");
+        menuColor.add(iColor3);
+    }
 
 
     @Override
@@ -219,7 +226,7 @@ public void createColorMenu(){
             case "Open" -> file.open();
             case "Save" -> file.save();
             case "Save As" -> file.saveAs();
-            case "Exit" ->  file.exit();
+            case "Exit" -> file.exit();
             case "Undo" -> edit.undo();
             case "Redo" -> edit.redo();
             case "Word Wrap" -> format.wordWrap();
